@@ -13,9 +13,5 @@ public class AnagramGenerator {
 
             usableChars[i] = letter;
         }
-
-
-
-
     }
 }
