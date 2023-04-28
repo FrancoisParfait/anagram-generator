@@ -6,6 +6,14 @@ public class AnagramGenerator {
         System.out.print("Enter word: ");
         String inputWord = myObj.nextLine();
 
+        char[] usableChars = new char[inputWord.length()];
+
+        for (int i = 0; i < inputWord.length(); i++) {
+            char letter = inputWord.charAt(i);
+
+            usableChars[i] = letter;
+        }
+
 
 
 
