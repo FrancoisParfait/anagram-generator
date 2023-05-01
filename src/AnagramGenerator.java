@@ -9,6 +9,10 @@ public class AnagramGenerator {
         HashSet<String> wordList = new HashSet<String>();
         Scanner file = new Scanner(new File("enable1.txt"));
 
+        while (file.hasNext()) {
+            wordList.add(file.next());
+        }
+
         Scanner myObj = new Scanner(System.in);
         System.out.print("Enter word: ");
         String inputWord = myObj.nextLine();
