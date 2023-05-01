@@ -1,8 +1,14 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.HashSet;
 public class AnagramGenerator {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        HashSet<String> wordList = new HashSet<String>();
+        Scanner file = new Scanner(new File("enable1.txt"));
+
         Scanner myObj = new Scanner(System.in);
         System.out.print("Enter word: ");
         String inputWord = myObj.nextLine();
