@@ -24,5 +24,13 @@ public class AnagramGenerator {
 
             usableChars[i] = letter;
         }
+
+        HashSet<String> narrowedList = new HashSet<String>();
+
+        for (String s : wordList) {
+            if (s.length() == usableChars.length) {
+                narrowedList.add(s);
+            }
+        }
     }
 }
