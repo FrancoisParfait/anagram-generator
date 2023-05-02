@@ -5,6 +5,16 @@ import java.util.Scanner;
 import java.util.HashSet;
 public class AnagramGenerator {
 
+    public static boolean containsLetter(char a, char[] arrB) {
+
+        for (int i = 0; i < arrB.length; i++) {
+            if (a == arrB[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
 
         HashSet<String> wordList = new HashSet<String>();
