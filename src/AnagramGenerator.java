@@ -21,15 +21,33 @@ public class AnagramGenerator {
 
         for (int i = 0; i < inputWord.length(); i++) {
             char letter = inputWord.charAt(i);
-
             usableChars[i] = letter;
         }
 
         HashSet<String> narrowedList = new HashSet<String>();
 
-        for (String s : wordList) {
-            if (s.length() == usableChars.length) {
-                narrowedList.add(s);
+        for (String a : wordList) {
+            if (a.length() == usableChars.length) {
+                char[] aChars = new char[a.length()];
+
+                for (int i = 0; i < a.length(); i++) {
+                    char letter = a.charAt(i);
+                    aChars[i] = letter;
+                }
+
+                int match = 0;
+
+                for (int i = 0; i < usableChars.length; i++) {
+                    for (int j = 0; j < aChars.length; j++) {
+                        if (usableChars[i] == aChars[j]) {
+                            match++;
+                        }
+                    }
+                }
+
+                if (match == inputWord.length()) {
+                    narrowedList.add(a);
+                }
             }
         }
     }
