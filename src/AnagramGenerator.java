@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.HashSet;
 public class AnagramGenerator {
@@ -15,7 +16,7 @@ public class AnagramGenerator {
 
         Scanner myObj = new Scanner(System.in);
         System.out.print("Enter word: ");
-        String inputWord = myObj.nextLine();
+        String inputWord = myObj.nextLine().toLowerCase();
 
         char[] usableChars = new char[inputWord.length()];
 
@@ -50,5 +51,7 @@ public class AnagramGenerator {
                 }
             }
         }
+
+        System.out.println(narrowedList);
     }
 }
