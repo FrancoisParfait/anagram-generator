@@ -43,8 +43,12 @@ public class AnagramGenerator {
 
                 for (int i = 0; i < a.length(); i++) {
                     char letter = a.charAt(i);
-                    aChars[i] = letter;
+                    if (containsLetter(letter, usableChars)) {
+                        aChars[i] = letter;
+                    }
                 }
+
+                //This needs to be changed, isn't working the way it's meant to. Still not taking out letters it should.
 
                 int match = 0;
 
