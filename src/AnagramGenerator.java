@@ -51,6 +51,7 @@ public class AnagramGenerator {
                 }
 
                 int match = 0;
+                int count = 0;
 
                 for (int i = 0; i < usableChars.length; i++) {
                     for (int j = 0; j < aChars.length; j++) {
@@ -58,9 +59,10 @@ public class AnagramGenerator {
                             match++;
                         }
                     }
+                    count++;
                 }
 
-                if (match == inputWord.length()) {
+                if (match == inputWord.length() && count == inputWord.length()) {
                     narrowedList.add(a);
                 }
             }
