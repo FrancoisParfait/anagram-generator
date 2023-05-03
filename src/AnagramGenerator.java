@@ -15,6 +15,19 @@ public class AnagramGenerator {
         return false;
     }
 
+    public static int charUsage(char a, char[] arrB) {
+
+        int count = 0;
+
+        for (int i = 0; i < arrB.length; i++) {
+            if (arrB[i] == a) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
 
         HashSet<String> wordList = new HashSet<String>();
@@ -51,7 +64,7 @@ public class AnagramGenerator {
                 }
 
                 int match = 0;
-                int count = 0;
+                int charCount = 0;
 
                 for (int i = 0; i < usableChars.length; i++) {
                     for (int j = 0; j < aChars.length; j++) {
@@ -59,10 +72,10 @@ public class AnagramGenerator {
                             match++;
                         }
                     }
-                    count++;
+                    charCount += charUsage(aChars[i], aChars);
                 }
 
-                if (match == inputWord.length() && count == inputWord.length()) {
+                if (match == inputWord.length() && charCount == inputWord.length()) {
                     narrowedList.add(a);
                 }
             }
