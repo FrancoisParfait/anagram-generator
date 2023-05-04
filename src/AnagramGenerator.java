@@ -51,16 +51,24 @@ public class AnagramGenerator {
         HashSet<String> narrowedList = new HashSet<String>();
 
         for (String a : wordList) {
-            if (a.length() == usableChars.length) {
+
+            boolean wrongLetter = false;
+
+            for (int i = 0; i < a.length(); i++) {
+                char letter = a.charAt(i);
+                if (!containsLetter(letter, usableChars)) {
+                    wrongLetter = true;
+                }
+            }
+
+            if (wrongLetter) {
+                continue;
+            } else if (a.length() == usableChars.length) {
                 char[] aChars = new char[a.length()];
 
                 for (int i = 0; i < a.length(); i++) {
                     char letter = a.charAt(i);
-                    if (!containsLetter(letter, usableChars)) {
-                        break;
-                    } else {
-                        aChars[i] = letter;
-                    }
+                    aChars[i] = letter;
                 }
 
                 int match = 0;
@@ -78,9 +86,18 @@ public class AnagramGenerator {
                 if (match == inputWord.length() && charCount == inputWord.length()) {
                     narrowedList.add(a);
                 }
+
+                if (a.equals(inputWord)) {
+                    narrowedList.remove(a);
+                }
             }
         }
 
-        System.out.println(narrowedList);
+        if (narrowedList.isEmpty()) {
+            System.out.println("No anagrams :(");
+        } else {
+            System.out.println(narrowedList);
+        }
+
     }
 }
