@@ -73,7 +73,6 @@ public class AnagramGenerator {
 
                 int match = 0;
                 int charCount = 0;
-                int doubleLetter = 0;
 
                 for (int i = 0; i < usableChars.length; i++) {
                     for (int j = 0; j < aChars.length; j++) {
