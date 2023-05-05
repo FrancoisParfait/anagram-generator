@@ -73,29 +73,19 @@ public class AnagramGenerator {
                 }
 
                 int match = 0;
-                int charCount = 0;
-                int charCount2 = 0;
-
-                for (char aChar : aChars) {
-                    charCount += charUsage(aChar, aChars);
-                }
-
-                for (char usable : usableChars) {
-                    charCount2 += charUsage(usable, usableChars);
-                }
 
                 for (int i = 0; i < usableChars.length; i++) {
                     for (int j = 0; j < aChars.length; j++) {
-                        if (usableChars[i] == aChars[j]) {
-                            match++;
-                            break;
+                        if (charUsage(usableChars[i], usableChars) == charUsage(aChars[j], aChars)) {
+                            if (usableChars[i] == aChars[j]) {
+                                match++;
+                                break;
+                            }
                         }
                     }
                 }
 
-                if (match == inputWord.length() && charCount == inputWord.length()) {
-                    narrowedList.add(a);
-                } else if (match == inputWord.length() && charCount > inputWord.length() && charCount2 > inputWord.length()) {
+                if (match == inputWord.length()) {
                     narrowedList.add(a);
                 }
 
