@@ -54,6 +54,7 @@ public class AnagramGenerator {
 
             boolean wrongLetter = false;
 
+            // Check for any letters that aren't in inputWord
             for (int i = 0; i < a.length(); i++) {
                 char letter = a.charAt(i);
                 if (!containsLetter(letter, usableChars)) {
@@ -73,17 +74,28 @@ public class AnagramGenerator {
 
                 int match = 0;
                 int charCount = 0;
+                int charCount2 = 0;
+
+                for (char aChar : aChars) {
+                    charCount += charUsage(aChar, aChars);
+                }
+
+                for (char usable : usableChars) {
+                    charCount2 += charUsage(usable, usableChars);
+                }
 
                 for (int i = 0; i < usableChars.length; i++) {
                     for (int j = 0; j < aChars.length; j++) {
                         if (usableChars[i] == aChars[j]) {
                             match++;
+                            break;
                         }
                     }
-                    charCount += charUsage(aChars[i], aChars);
                 }
 
                 if (match == inputWord.length() && charCount == inputWord.length()) {
+                    narrowedList.add(a);
+                } else if (match == inputWord.length() && charCount > inputWord.length() && charCount2 > inputWord.length()) {
                     narrowedList.add(a);
                 }
 
