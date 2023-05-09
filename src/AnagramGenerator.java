@@ -85,12 +85,8 @@ public class AnagramGenerator {
                     }
                 }
 
-                if (match == inputWord.length()) {
+                if (match == inputWord.length() && !a.equals(inputWord)) {
                     narrowedList.add(a);
-                }
-
-                if (a.equals(inputWord)) {
-                    narrowedList.remove(a);
                 }
             }
         }
