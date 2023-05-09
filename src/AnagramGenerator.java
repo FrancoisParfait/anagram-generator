@@ -30,7 +30,7 @@ public class AnagramGenerator {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        HashSet<String> wordList = new HashSet<String>();
+        HashSet<String> wordList = new HashSet<>();
         Scanner file = new Scanner(new File("enable1.txt"));
 
         while (file.hasNext()) {
@@ -48,7 +48,7 @@ public class AnagramGenerator {
             usableChars[i] = letter;
         }
 
-        HashSet<String> narrowedList = new HashSet<String>();
+        HashSet<String> narrowedList = new HashSet<>();
 
         for (String a : wordList) {
 
@@ -62,9 +62,7 @@ public class AnagramGenerator {
                 }
             }
 
-            if (wrongLetter) {
-                continue;
-            } else if (a.length() == usableChars.length) {
+            if (!wrongLetter && a.length() == usableChars.length) {
                 char[] aChars = new char[a.length()];
 
                 for (int i = 0; i < a.length(); i++) {
