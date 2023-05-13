@@ -32,11 +32,15 @@ public class AnagramGenerator {
     public static void main(String[] args) throws FileNotFoundException {
 
         JFrame frame = new JFrame();
+        JFrame.setDefaultLookAndFeelDecorated(true);
         frame.setTitle("Anagram Generator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(640, 640);
         frame.setResizable(false);
         frame.setVisible(true);
+
+        ImageIcon image = new ImageIcon("anagram.png");
+        frame.setIconImage(image.getImage());
 
         HashSet<String> wordList = new HashSet<>();
         Scanner file = new Scanner(new File("enable1.txt"));
