@@ -1,8 +1,6 @@
 import javax.swing.*;
-import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.HashSet;
 public class AnagramGenerator {
