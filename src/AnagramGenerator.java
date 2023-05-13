@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Locale;
@@ -29,6 +30,10 @@ public class AnagramGenerator {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
+
+        JFrame frame = new JFrame();
+        frame.setSize(640, 640);
+        frame.setVisible(true);
 
         HashSet<String> wordList = new HashSet<>();
         Scanner file = new Scanner(new File("enable1.txt"));
