@@ -32,7 +32,10 @@ public class AnagramGenerator {
     public static void main(String[] args) throws FileNotFoundException {
 
         JFrame frame = new JFrame();
+        frame.setTitle("Anagram Generator");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(640, 640);
+        frame.setResizable(false);
         frame.setVisible(true);
 
         HashSet<String> wordList = new HashSet<>();
