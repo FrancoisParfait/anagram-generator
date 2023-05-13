@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Locale;
@@ -38,9 +39,6 @@ public class AnagramGenerator {
         frame.setSize(640, 640);
         frame.setResizable(false);
         frame.setVisible(true);
-
-        ImageIcon image = new ImageIcon("anagram.png");
-        frame.setIconImage(image.getImage());
 
         HashSet<String> wordList = new HashSet<>();
         Scanner file = new Scanner(new File("enable1.txt"));
