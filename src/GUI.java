@@ -19,12 +19,18 @@ public class GUI extends JFrame {
         label.setVerticalAlignment(JLabel.TOP);
         label.setFont(new Font("Z003", Font.PLAIN, 30));
 
+        // JPanel inputPanel = new JPanel();
+        // inputPanel.setBackground(Color.white);
+        // inputPanel.setLayout(null);
+        // inputPanel.setBounds(320, 320, 10, 10);
+
         this.setTitle("Anagram Generator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(640, 640);
         this.setResizable(false);
         this.setVisible(true);
         this.add(label);
+        // this.add(inputPanel);
     }
 
 }
