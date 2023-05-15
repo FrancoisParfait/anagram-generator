@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class GUI extends JFrame {
 
@@ -10,6 +11,8 @@ public class GUI extends JFrame {
         label.setText("Let's make some anagrams");
         label.setIcon(image);
         label.setHorizontalTextPosition(JLabel.CENTER);
+        label.setVerticalTextPosition(JLabel.TOP);
+        label.setFont(new Font("Z003", Font.PLAIN, 30));
 
         this.setTitle("Anagram Generator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
