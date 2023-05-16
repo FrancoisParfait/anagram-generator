@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 public class GUI extends JFrame implements ActionListener {
 
+    JButton submit;
+    JTextField input;
     GUI() {
 
         ImageIcon image = new ImageIcon("anagram-2.png");
@@ -21,10 +23,11 @@ public class GUI extends JFrame implements ActionListener {
         description.setVerticalAlignment(JLabel.TOP);
         description.setFont(new Font("Z003", Font.PLAIN, 30));
 
-        JTextField input = new JTextField();
+        input = new JTextField();
         input.setPreferredSize(new Dimension(250, 40));
 
-        JButton submit = new JButton();
+        submit = new JButton("Submit");
+        submit.addActionListener(this);
         submit.setBounds(320, 300, 100, 50);
 
         JPanel titlePanel = new JPanel();
@@ -49,8 +52,10 @@ public class GUI extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == submit) {
+            submit.getText();
+        }
 
     }
 }
