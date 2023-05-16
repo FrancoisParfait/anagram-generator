@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class GUI extends JFrame {
+public class GUI extends JFrame implements ActionListener {
 
     GUI() {
 
@@ -19,6 +21,9 @@ public class GUI extends JFrame {
         description.setVerticalAlignment(JLabel.TOP);
         description.setFont(new Font("Z003", Font.PLAIN, 30));
 
+        JButton submit = new JButton();
+        submit.setBounds(320, 300, 100, 50);
+
         JPanel titlePanel = new JPanel();
         titlePanel.setBackground(Color.white);
         titlePanel.setBounds(0, 0, 640, 212);
@@ -34,8 +39,14 @@ public class GUI extends JFrame {
         this.setLayout(null);
         this.setVisible(true);
         titlePanel.add(description);
+        inputPanel.add(submit);
         this.add(inputPanel, BorderLayout.CENTER);
         this.add(titlePanel, BorderLayout.CENTER);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+
+
+    }
 }
