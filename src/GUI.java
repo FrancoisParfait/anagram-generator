@@ -20,7 +20,7 @@ public class GUI extends JFrame {
         label.setFont(new Font("Z003", Font.PLAIN, 30));
 
         JPanel titlePanel = new JPanel();
-        titlePanel.setBackground(Color.blue);
+        titlePanel.setBackground(Color.white);
         titlePanel.setBounds(0, 0, 640, 212);
 
         JPanel inputPanel = new JPanel();
@@ -33,7 +33,7 @@ public class GUI extends JFrame {
         this.setResizable(false);
         this.setLayout(null);
         this.setVisible(true);
-        this.add(label);
+        titlePanel.add(label);
         this.add(inputPanel, BorderLayout.CENTER);
         this.add(titlePanel, BorderLayout.CENTER);
     }
