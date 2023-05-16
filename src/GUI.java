@@ -21,6 +21,9 @@ public class GUI extends JFrame implements ActionListener {
         description.setVerticalAlignment(JLabel.TOP);
         description.setFont(new Font("Z003", Font.PLAIN, 30));
 
+        JTextField input = new JTextField();
+        input.setPreferredSize(new Dimension(250, 40));
+
         JButton submit = new JButton();
         submit.setBounds(320, 300, 100, 50);
 
@@ -39,6 +42,7 @@ public class GUI extends JFrame implements ActionListener {
         this.setLayout(null);
         this.setVisible(true);
         titlePanel.add(description);
+        inputPanel.add(input);
         inputPanel.add(submit);
         this.add(inputPanel, BorderLayout.CENTER);
         this.add(titlePanel, BorderLayout.CENTER);
