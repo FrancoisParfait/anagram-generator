@@ -10,14 +10,14 @@ public class GUI extends JFrame {
         Image newImg = image2.getScaledInstance(160, 160, Image.SCALE_SMOOTH);
         image = new ImageIcon(newImg);
 
-        JLabel label = new JLabel();
-        label.setText("Let's make some anagrams");
-        label.setIcon(image);
-        label.setHorizontalTextPosition(JLabel.CENTER);
-        label.setVerticalTextPosition(JLabel.TOP);
-        label.setHorizontalAlignment(JLabel.CENTER);
-        label.setVerticalAlignment(JLabel.TOP);
-        label.setFont(new Font("Z003", Font.PLAIN, 30));
+        JLabel description = new JLabel();
+        description.setText("Let's make some anagrams");
+        description.setIcon(image);
+        description.setHorizontalTextPosition(JLabel.CENTER);
+        description.setVerticalTextPosition(JLabel.TOP);
+        description.setHorizontalAlignment(JLabel.CENTER);
+        description.setVerticalAlignment(JLabel.TOP);
+        description.setFont(new Font("Z003", Font.PLAIN, 30));
 
         JPanel titlePanel = new JPanel();
         titlePanel.setBackground(Color.white);
@@ -33,7 +33,7 @@ public class GUI extends JFrame {
         this.setResizable(false);
         this.setLayout(null);
         this.setVisible(true);
-        titlePanel.add(label);
+        titlePanel.add(description);
         this.add(inputPanel, BorderLayout.CENTER);
         this.add(titlePanel, BorderLayout.CENTER);
     }
