@@ -92,10 +92,12 @@ public class AnagramGenerator {
             }
         }
 
+        String narrowedString = String.join(", ", narrowedList);
+
         if (narrowedList.isEmpty()) {
-            System.out.println("No anagrams :(");
+            gui.outputArea.setText("No anagrams :(");
         } else {
-            System.out.println(narrowedList);
+            gui.outputArea.setText(narrowedString);
         }
     }
 }

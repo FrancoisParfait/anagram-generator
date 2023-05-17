@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 public class GUI extends JFrame implements ActionListener {
 
+    JTextArea outputArea = new JTextArea();
     boolean running = false;
     String userWord;
     JButton submit;
@@ -52,6 +53,8 @@ public class GUI extends JFrame implements ActionListener {
         inputPanel.add(submit);
         this.add(inputPanel, BorderLayout.CENTER);
         this.add(titlePanel, BorderLayout.CENTER);
+
+        inputPanel.add(outputArea);
     }
 
     @Override
