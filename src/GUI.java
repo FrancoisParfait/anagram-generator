@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 public class GUI extends JFrame implements ActionListener {
 
+    boolean running = false;
+    String userWord;
     JButton submit;
     JTextField input;
     GUI() {
@@ -55,7 +57,8 @@ public class GUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == submit) {
-            submit.getText();
+            userWord = input.getText();
+            running = true;
         }
 
     }

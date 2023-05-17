@@ -27,7 +27,7 @@ public class AnagramGenerator {
         return count;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
         GUI gui = new GUI();
 
@@ -38,9 +38,15 @@ public class AnagramGenerator {
             wordList.add(file.next());
         }
 
-        Scanner myObj = new Scanner(System.in);
-        System.out.print("Enter word: ");
-        String inputWord = myObj.nextLine().toLowerCase();
+        // Scanner myObj = new Scanner(System.in);
+        // System.out.print("Enter word: ");
+        // String inputWord = myObj.nextLine().toLowerCase();
+
+        while (!gui.running) {
+            Thread.sleep(10);
+        }
+
+        String inputWord = gui.userWord;
 
         char[] usableChars = new char[inputWord.length()];
 
