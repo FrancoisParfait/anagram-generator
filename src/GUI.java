@@ -25,6 +25,7 @@ public class GUI extends JFrame implements ActionListener {
 
         input = new JTextField();
         input.setPreferredSize(new Dimension(250, 40));
+        input.setFont(new Font("Impact", Font.PLAIN, 35));
 
         submit = new JButton("Submit");
         submit.addActionListener(this);
@@ -35,7 +36,7 @@ public class GUI extends JFrame implements ActionListener {
         titlePanel.setBounds(0, 0, 640, 212);
 
         JPanel inputPanel = new JPanel();
-        inputPanel.setBackground(Color.red);
+        inputPanel.setBackground(Color.white);
         inputPanel.setBounds(0, 212, 640, 428);
 
         this.setTitle("Anagram Generator");
