@@ -38,10 +38,6 @@ public class AnagramGenerator {
             wordList.add(file.next());
         }
 
-        // Scanner myObj = new Scanner(System.in);
-        // System.out.print("Enter word: ");
-        // String inputWord = myObj.nextLine().toLowerCase();
-
         while (!gui.running) {
             Thread.sleep(10);
         }
