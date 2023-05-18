@@ -40,7 +40,11 @@ public class GUI extends JFrame implements ActionListener {
 
         JPanel inputPanel = new JPanel();
         inputPanel.setBackground(Color.white);
-        inputPanel.setBounds(0, 212, 640, 428);
+        inputPanel.setBounds(0, 212, 640, 50);
+
+        JPanel outputPanel = new JPanel();
+        outputPanel.setBackground(Color.white);
+        outputPanel.setBounds(0, 262, 640, 378);
 
         this.setTitle("Anagram Generator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,8 +57,10 @@ public class GUI extends JFrame implements ActionListener {
         inputPanel.add(submit);
         this.add(inputPanel, BorderLayout.CENTER);
         this.add(titlePanel, BorderLayout.CENTER);
+        this.add(outputPanel, BorderLayout.CENTER);
+        outputPanel.add(outputArea);
 
-        inputPanel.add(outputArea);
+        outputArea.setFont(new Font("Impact", Font.PLAIN, 20));
     }
 
     @Override
