@@ -45,7 +45,7 @@ public class AnagramGenerator {
         boolean run = true;
 
         while (run) {
-            String inputWord = gui.userWord;
+            String inputWord = gui.userWord.toLowerCase();
 
             char[] usableChars = new char[inputWord.length()];
 
@@ -97,7 +97,9 @@ public class AnagramGenerator {
 
             String narrowedString = String.join(", ", narrowedList);
 
-            if (narrowedList.isEmpty()) {
+            if (inputWord.equals("")) {
+                gui.outputArea.setText("Enter a word!");
+            } else if (narrowedList.isEmpty()){
                 gui.outputArea.setText("No anagrams :(");
             } else {
                 gui.outputArea.setText(narrowedString);
