@@ -42,62 +42,66 @@ public class AnagramGenerator {
             Thread.sleep(10);
         }
 
-        String inputWord = gui.userWord;
+        boolean run = true;
 
-        char[] usableChars = new char[inputWord.length()];
+        while (run) {
+            String inputWord = gui.userWord;
 
-        for (int i = 0; i < inputWord.length(); i++) {
-            char letter = inputWord.charAt(i);
-            usableChars[i] = letter;
-        }
+            char[] usableChars = new char[inputWord.length()];
 
-        HashSet<String> narrowedList = new HashSet<>();
-
-        for (String a : wordList) {
-
-            boolean wrongLetter = false;
-
-            // Check for any letters that aren't in inputWord
-            for (int i = 0; i < a.length(); i++) {
-                char letter = a.charAt(i);
-                if (!containsLetter(letter, usableChars)) {
-                    wrongLetter = true;
-                }
+            for (int i = 0; i < inputWord.length(); i++) {
+                char letter = inputWord.charAt(i);
+                usableChars[i] = letter;
             }
 
-            if (!wrongLetter && a.length() == usableChars.length) {
-                char[] aChars = new char[a.length()];
+            HashSet<String> narrowedList = new HashSet<>();
 
+            for (String a : wordList) {
+
+                boolean wrongLetter = false;
+
+                // Check for any letters that aren't in inputWord
                 for (int i = 0; i < a.length(); i++) {
                     char letter = a.charAt(i);
-                    aChars[i] = letter;
-                }
-
-                int match = 0;
-
-                for (int i = 0; i < usableChars.length; i++) {
-                    for (int j = 0; j < aChars.length; j++) {
-                        if (charUsage(usableChars[i], usableChars) == charUsage(aChars[j], aChars)) {
-                            if (usableChars[i] == aChars[j]) {
-                                match++;
-                                break;
-                            }
-                        }
+                    if (!containsLetter(letter, usableChars)) {
+                        wrongLetter = true;
                     }
                 }
 
-                if (match == inputWord.length() && !a.equals(inputWord)) {
-                    narrowedList.add(a);
+                if (!wrongLetter && a.length() == usableChars.length) {
+                    char[] aChars = new char[a.length()];
+
+                    for (int i = 0; i < a.length(); i++) {
+                        char letter = a.charAt(i);
+                        aChars[i] = letter;
+                    }
+
+                    int match = 0;
+
+                    for (int i = 0; i < usableChars.length; i++) {
+                        for (int j = 0; j < aChars.length; j++) {
+                            if (charUsage(usableChars[i], usableChars) == charUsage(aChars[j], aChars)) {
+                                if (usableChars[i] == aChars[j]) {
+                                    match++;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if (match == inputWord.length() && !a.equals(inputWord)) {
+                        narrowedList.add(a);
+                    }
                 }
             }
-        }
 
-        String narrowedString = String.join(", ", narrowedList);
+            String narrowedString = String.join(", ", narrowedList);
 
-        if (narrowedList.isEmpty()) {
-            gui.outputArea.setText("No anagrams :(");
-        } else {
-            gui.outputArea.setText(narrowedString);
+            if (narrowedList.isEmpty()) {
+                gui.outputArea.setText("No anagrams :(");
+            } else {
+                gui.outputArea.setText(narrowedString);
+            }
         }
     }
 }

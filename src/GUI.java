@@ -9,7 +9,6 @@ public class GUI extends JFrame implements ActionListener {
     boolean running = false;
     String userWord;
     JButton submit;
-    JButton reset;
     JTextField input;
     GUI() {
 
@@ -35,9 +34,6 @@ public class GUI extends JFrame implements ActionListener {
         submit.addActionListener(this);
         submit.setBounds(320, 300, 100, 50);
 
-        reset = new JButton("Reset");
-        reset.addActionListener(this);
-
         JPanel titlePanel = new JPanel();
         titlePanel.setBackground(Color.white);
         titlePanel.setBounds(0, 0, 640, 212);
@@ -55,7 +51,6 @@ public class GUI extends JFrame implements ActionListener {
         titlePanel.add(description);
         inputPanel.add(input);
         inputPanel.add(submit);
-        inputPanel.add(reset);
         this.add(inputPanel, BorderLayout.CENTER);
         this.add(titlePanel, BorderLayout.CENTER);
 
@@ -65,13 +60,8 @@ public class GUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == submit) {
-            userWord = input.getText();
             running = true;
+            userWord = input.getText();
         }
-
-        if (e.getSource() == reset) {
-            outputArea.setText("");
-        }
-
     }
 }
