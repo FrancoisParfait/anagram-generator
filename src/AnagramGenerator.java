@@ -46,6 +46,7 @@ public class AnagramGenerator {
         boolean run = true;
 
         while (run) {
+
             String inputWord = gui.userWord.toLowerCase();
 
             char[] usableChars = new char[inputWord.length()];
