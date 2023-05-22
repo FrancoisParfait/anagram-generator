@@ -99,12 +99,17 @@ public class AnagramGenerator {
 
             String narrowedString = String.join(", ", narrowedList);
 
-            if (inputWord.equals("")) {
-                gui.outputArea.setText("Enter a word!");
-            } else if (narrowedList.isEmpty()){
-                gui.outputArea.setText("No anagrams :(");
-            } else {
-                gui.outputArea.setText(narrowedString);
+            try {
+                int i = Integer.parseInt(gui.userWord);
+                gui.outputArea.setText("Words, not numbers!");
+            } catch (NumberFormatException e) {
+                if (inputWord.equals("")) {
+                    gui.outputArea.setText("Enter a word!");
+                } else if (narrowedList.isEmpty()){
+                    gui.outputArea.setText("No anagrams :(");
+                } else {
+                    gui.outputArea.setText(narrowedString);
+                }
             }
         }
     }
