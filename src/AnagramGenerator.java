@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 import java.util.HashSet;
 public class AnagramGenerator {
@@ -29,10 +28,12 @@ public class AnagramGenerator {
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
+        InputStream stream = AnagramGenerator.class.getClassLoader().getResourceAsStream("enable1.txt");
+
         GUI gui = new GUI();
 
         HashSet<String> wordList = new HashSet<>();
-        Scanner file = new Scanner(new File("enable1.txt"));
+        Scanner file = new Scanner(stream);
 
         while (file.hasNext()) {
             wordList.add(file.next());

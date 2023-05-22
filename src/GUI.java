@@ -12,6 +12,8 @@ public class GUI extends JFrame implements ActionListener {
     JTextField input;
     GUI() {
 
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("anagram-2.png")));
+
         ImageIcon image = new ImageIcon("anagram-2.png");
         Image image2 = image.getImage();
         Image newImg = image2.getScaledInstance(160, 160, Image.SCALE_SMOOTH);
